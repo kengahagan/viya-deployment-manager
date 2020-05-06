@@ -1,0 +1,19 @@
+#####
+#
+# This file contains the config information for Azure Network Security Groups
+# Enter data in the following format:
+#
+# Priority|Direction|Type|Protocol|Source IP Range|Source Port|Dest IP Range|Dest Port|Rule-Name|Desc|
+#
+# https://docs.microsoft.com/en-us/cli/azure/network/nsg/rule?view=azure-cli-latest#az-network-nsg-rule-create
+#
+# Comments and empty lines will be ignored when processed.
+#
+#####
+
+100|Inbound|Allow|*|<CIDR>|*|*|80|SAS-HTTP|Allow HTTP from whitelisted network|
+110|Inbound|Allow|*|<CIDR>|*|*|443|SAS-HTTPS|Allow HTTPS from whitelisted network|
+120|Inbound|Allow|*|<CIDR>|*|*|22|SAS-SSH|Allow SSH from whitelisted network|
+170|Inbound|Allow|*|<CIDR>|*|*|8443|SAS-kubectl|Allow kubectl from whitelisted network|
+180|Inbound|Allow|*|<CIDR>|*|*|5000|SAS-ACR|Allow ACR from whitelisted network|
+190|Inbound|Allow|*|<CIDR>|*|*|5570|SAS-CAS|Allow CAS from whitelisted network|

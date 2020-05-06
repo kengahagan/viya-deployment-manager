@@ -1,0 +1,24 @@
+#####
+# We'll make all this arguments soon but for now - just get it working
+# These variables will drive the deployment of Viya 4 to Microsoft Azure
+#####
+
+V4_CFG_SAS_ORDER_NUM="09QVVF"
+# These 2 values will be used to download Kustomize bundles via the customer portal API
+V4_CFG_SAS_PROFILE_ID="<SAS Profile ID used to retreive the kustomize manifest from the API>"
+
+V4_CFG_DEPLOYMENT_ADMIN_ID="sasadm"
+V4_CFG_K8S_INGRESS_TYPE="ingress" # Valid options [ingress|istio]
+V4_CFG_K8S_TARGET_NAMESPACE="<Desired Namespace>"
+
+V4_CFG_DNS_ZONE="<Desired DNS Zone>"
+V4_CFG_TARGET_RESOURCE_GROUP="<Desired Resource Group Name>"
+
+#V4_CFG_REGISTRY_MIRROR_HOSTNAME="<ACR DNS name>"
+
+V4_CFG_DEPLOY_PREFIX="<Name Prefix for App SPN>"
+
+V4_CFG_DEPLOYMENT_BLUEPRINT="basic"
+
+V4_CFG_CONFIGURE_TLS="false"
+V4_CFG_CONFIGURE_EMBEDDED_LDAP="false"

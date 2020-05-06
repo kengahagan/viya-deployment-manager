@@ -1,0 +1,3 @@
+# Misc background notes 
+
+This content will arrive one of these days...

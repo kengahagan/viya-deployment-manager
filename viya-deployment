@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+declare -A USER_ARGS
+declare -A DEFAULT_ARGS
+declare -A ARG_SOURCE
+
+#####
+# Include library of functions
+#####
+export SCRIPT_DIR="$( cd "$(dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+. "${SCRIPT_DIR}/providers/common/init-functions.sh"
+
+global-init
+parse-args "$@"

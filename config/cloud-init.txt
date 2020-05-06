@@ -1,0 +1,31 @@
+#cloud-config
+package_upgrade: true
+packages:
+  - nfs-kernel-server
+  - lvm2
+  - util-linux
+  - snapd
+runcmd:
+  - pvcreate /dev/sdc /dev/sdd /dev/sde /dev/sdf 
+  - vgcreate data-vg01 /dev/sdc /dev/sdd /dev/sde /dev/sdf 
+  - lvcreate --type raid5 --extents 100%FREE --stripes 3 --name data-lv01 data-vg01
+  - mkfs -t ext4 /dev/data-vg01/data-lv01 
+  - mkdir /export
+  - echo "/dev/data-vg01/data-lv01       /export        ext4        defaults,nofail,x-systemd.requires=cloud-init.service,barrier=0,discard        0  2" >>/etc/fstab
+  - mount -a
+  - mkdir /export/data /export/pvs /export/homes
+  - chmod 4777 /export/data
+  - chmod 4777 /export/pvs
+  - echo "/export         192.168.0.0/16(rw,no_root_squash,async,insecure,fsid=0,crossmnt,no_subtree_check)" >> /etc/exports
+  - systemctl enable rpc-statd
+  - systemctl start rpc-statd
+  - systemctl enable nfs-kernel-server
+  - systemctl restart nfs-kernel-server
+  - wget https://packages.microsoft.com/config/ubuntu/18.04/packages-microsoft-prod.deb
+  - dpkg -i packages-microsoft-prod.deb
+  - apt-get update
+  - apt-get install blobfuse fuse -y
+  - snap install kubectl --classic
+  - snap install helm --classic
+  - helm repo add stable https://kubernetes-charts.storage.googleapis.com/
+  - curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash

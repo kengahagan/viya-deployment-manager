@@ -1,0 +1,28 @@
+#####
+# We'll make all this arguments soon but for now - just get it working
+# These variables will drive the deployment of Viya 4 to Microsoft Azure
+#####
+
+V4_CFG_CLOUD_PROVIDER="azure"
+V4_CFG_CLOUD_PROVIDER_ACCOUNT="<My Account ID>"
+V4_CFG_CLOUD_PROVIDER_LOCATION="eastus2"
+V4_CFG_TARGET_RESOURCE_GROUP="basic"
+
+V4_CFG_POSTGRES_PASSWORD='<Desired Postgres Password>'
+V4_CFG_POSTGRES_USER_NAME="<Desired Postgres Username>"
+V4_CFG_POSTGRES_SKU="GP_Gen5_8"
+V4_CFG_POSTGRES_INIT_STORAGE=10240
+V4_CFG_POSTGRES_VERSION="11"
+V4_CFG_POSTGRES_BKUP_RETENTION_DAYS=7
+
+V4_CFG_VM_SKU_JUMPBOX="Standard_E8s_v3"
+V4_CFG_VM_SKU_K8S_SYSTEM_NP="Standard_D4as_v4"
+V4_CFG_VM_SKU_K8S_STATELESS_NP="Standard_D8as_v4"
+V4_CFG_VM_SKU_K8S_STATEFUL_NP="Standard_D8as_v4"
+V4_CFG_VM_SKU_K8S_COMPUTE_NP="Standard_E16s_v3"
+V4_CFG_VM_SKU_K8S_CAS_NP="Standard_E16s_v3"
+
+V4_CFG_DNS_ZONE="<DNS Zone>"
+V4_CFG_DNS_HOST="<DNS Hostname>"
+V4_CFG_DNS_RESOURCE_GROUP="<Resource Group if DNS is managed in Azure>"
+V4_CFG_MANAGE_DNS="<true|false>"

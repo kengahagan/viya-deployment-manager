@@ -1,0 +1,115 @@
+cacerts:
+    sascaroot: |
+        -----BEGIN CERTIFICATE-----
+        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
+        JV3fkA==
+        -----END CERTIFICATE-----
+    sassha2rootca: |
+        -----BEGIN CERTIFICATE-----
+        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
+        -----END CERTIFICATE-----
+    digicertrootca: |
+        -----BEGIN CERTIFICATE-----
+        MIIDrzCCApegAwIBAgIQCDvgVpBCRrGhdWrJWZHHSjANBgkqhkiG9w0BAQUFADBh
+        MQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMRkwFwYDVQQLExB3
+        d3cuZGlnaWNlcnQuY29tMSAwHgYDVQQDExdEaWdpQ2VydCBHbG9iYWwgUm9vdCBD
+        QTAeFw0wNjExMTAwMDAwMDBaFw0zMTExMTAwMDAwMDBaMGExCzAJBgNVBAYTAlVT
+        MRUwEwYDVQQKEwxEaWdpQ2VydCBJbmMxGTAXBgNVBAsTEHd3dy5kaWdpY2VydC5j
+        b20xIDAeBgNVBAMTF0RpZ2lDZXJ0IEdsb2JhbCBSb290IENBMIIBIjANBgkqhkiG
+        9w0BAQEFAAOCAQ8AMIIBCgKCAQEA4jvhEXLeqKTTo1eqUKKPC3eQyaKl7hLOllsB
+        CSDMAZOnTjC3U/dDxGkAV53ijSLdhwZAAIEJzs4bg7/fzTtxRuLWZscFs3YnFo97
+        nh6Vfe63SKMI2tavegw5BmV/Sl0fvBf4q77uKNd0f3p4mVmFaG5cIzJLv07A6Fpt
+        43C/dxC//AH2hdmoRBBYMql1GNXRor5H4idq9Joz+EkIYIvUX7Q6hL+hqkpMfT7P
+        T19sdl6gSzeRntwi5m3OFBqOasv+zbMUZBfHWymeMr/y7vrTC0LUq7dBMtoM1O/4
+        gdW7jVg/tRvoSSiicNoxBN33shbyTApOB6jtSj1etX+jkMOvJwIDAQABo2MwYTAO
+        BgNVHQ8BAf8EBAMCAYYwDwYDVR0TAQH/BAUwAwEB/zAdBgNVHQ4EFgQUA95QNVbR
+        TLtm8KPiGxvDl7I90VUwHwYDVR0jBBgwFoAUA95QNVbRTLtm8KPiGxvDl7I90VUw
+        DQYJKoZIhvcNAQEFBQADggEBAMucN6pIExIK+t1EnE9SsPTfrgT1eXkIoyQY/Esr
+        hMAtudXH/vTBH1jLuG2cenTnmCmrEbXjcKChzUyImZOMkXDiqw8cvpOp/2PV5Adg
+        06O/nVsJ8dWO41P0jmP6P6fbtGbfYmbW0W5BjfIttep3Sp+dWOIrWcBAI+0tKIJF
+        PnlUkiaY4IBIqDfv8NZ5YBberOgOzW6sRBc4L0na4UU+Krk2U886UAb3LujEV0ls
+        YSEY1QSteDwsOoBrp+uvFRTp2InBuThs4pFsiv9kuXclVzDAGySj4dzp30d8tbQk
+        CAUw7C29C79Fv1C5qfPrmAESrciIxpg0X40KPMbp1ZWVbd4=
+        -----END CERTIFICATE-----
+config:
+    application:
+        sas.identities.providers.ldap.connection:
+            host: ldap-svc.openldap.svc.cluster.local
+            password: Go4thsas
+            port: 389
+            userDN: cn=admin,dc=sas,dc=com
+        sas.identities.providers.ldap.group:
+            baseDN: ou=groups,dc=sas,dc=com
+            accountId: cn
+            member: uniqueMember
+            memberOf: memberOf
+            objectClass: groupOfUniqueNames
+            objectFilter: (objectClass=groupOfUniqueNames)
+            searchFilter: cn={0}
+        sas.identities.providers.ldap.user:
+            baseDN: ou=people,dc=sas,dc=com
+            accountId: uid
+            memberOf: memberOf
+            objectClass: inetOrgPerson
+            objectFilter: (objectClass=inetOrgPerson)
+            searchFilter: uid={0}
+        sas.logon.initial.password: Go4thsas
+    identities:
+        sas.identities:
+            administrator: sasadm

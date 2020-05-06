@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: compsrv
+spec:
+  template:
+    spec:
+      containers:
+      - name: sssd
+        volumeMounts:
+          - name: sssd-config
+            mountPath: "/etc/sssd"
+      volumes:
+      - name: sssd-config
+        configMap:
+          name: sas-sssd-config
+          items:
+          - key: SSSD_CONF
+            path: sssd.conf
+            mode: 0600
