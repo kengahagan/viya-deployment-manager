@@ -246,7 +246,6 @@ else
 fi
 
 if [[ "${V4_CFG_CONFIGURE_SSSD}" = "true" ]] ; then
-
 cat << EOF > compsrv-sssd.yaml
 apiVersion: apps/v1
 kind: Deployment
@@ -271,7 +270,7 @@ spec:
 EOF
 
   SSSD_RESOURCE="- site-config/sssd-configmap.yaml"
-  SSSD_PATCH="- path: site-config/compsrv-sssd-nfs.yaml"
+  SSSD_PATCH="- path: site-config/compsrv-sssd.yaml"
   #TODO: break sssd and nfs mounts into two patches.  No reason to be the same.
 fi
 
@@ -382,6 +381,13 @@ patchesJson6902:
     version: v1
     kind: StatefulSet
     name: sas-consul-server
+  path: site-config/ss-storclass.yaml
+
+- target:
+    group: apps
+    version: v1
+    kind: StatefulSet
+    name: sas-rabbitmq-server
   path: site-config/ss-storclass.yaml
 
 - target:
@@ -729,10 +735,6 @@ spec:
           operator: "Equal"
           value: "stateless"
           effect: "NoSchedule"
-        - key: "node-role.kubernetes.io"
-          operator: "Equal"
-          value: "master"
-          effect: "NoSchedule"
       affinity:
         nodeAffinity:
           preferredDuringSchedulingIgnoredDuringExecution:
@@ -785,10 +787,6 @@ spec:
           operator: "Equal"
           value: "stateless"
           effect: "NoSchedule"
-        - key: "node-role.kubernetes.io"
-          operator: "Equal"
-          value: "master"
-          effect: "NoSchedule"
       affinity:
         nodeAffinity:
           preferredDuringSchedulingIgnoredDuringExecution:
@@ -838,10 +836,6 @@ spec:
           operator: "Equal"
           value: "compute"
           effect: "NoSchedule"
-        - key: "node-role.kubernetes.io"
-          operator: "Equal"
-          value: "master"
-          effect: "NoSchedule"
       affinity:
         nodeAffinity:
           preferredDuringSchedulingIgnoredDuringExecution:
@@ -887,10 +881,6 @@ template:
         operator: Equal
         value: compute
         effect: NoSchedule
-      - key: "node-role.kubernetes.io"
-        operator: "Equal"
-        value: "master"
-        effect: "NoSchedule"
     affinity:
       nodeAffinity:
         preferredDuringSchedulingIgnoredDuringExecution:
